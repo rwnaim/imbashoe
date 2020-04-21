@@ -1,0 +1,5 @@
+<?php
+    $db = $this->getDI()->get('db');
+    $sql = "select * from users";
+    $result = $db->fetchOne($sql, \Phalcon\Db\Enum::FETCH_ASSOC);
+    echo var_dump($result);
