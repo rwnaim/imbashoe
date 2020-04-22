@@ -14,11 +14,12 @@ if ($produk->count() > 0) {
             <th>Deskripsi Produk</th>
             <th>Harga Produk</th>
             <th>Status Produk</th>
+            <th colspan="2">Aksi</th>
         </tr>
         </thead>
         <tfoot>
         <tr>
-            <td colspan="5">Jumlah Produk: <?php echo $produk->count(); ?></td>
+            <td colspan="7">Jumlah Produk: <?php echo $produk->count(); ?></td>
             <td><?php echo $this->tag->linkTo(["menu", "Back to Menu", 'class' => 'btn btn-primary']); ?></td>
         </tr>
         </tfoot>
@@ -31,6 +32,8 @@ if ($produk->count() > 0) {
                 <td><?php echo $produk->deskripsi_produk; ?></td>
                 <td><?php echo $produk->harga_produk; ?></td>
                 <td><?php echo $produk->status_produk; ?></td>
+                <td><?php echo $this->tag->linkTo(["Produk/edit", "Edit Produk", 'class' => 'btn btn-primary']); ?></td>
+                <td><?php echo $this->tag->linkTo(["Produk/hapus", "Hapus Produk", 'class' => 'btn btn-primary']); ?></td>
             </tr>
         <?php } ?>
         </tbody>

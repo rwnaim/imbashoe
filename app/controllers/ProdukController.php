@@ -43,4 +43,9 @@ class ProdukController extends ControllerBase
         // passing a message to the view
         $this->view->message = $message;
     }
+    public function listAction()
+    {
+        $produk = new Produk();
+        $this->view->produk = Produk::find();
+    }
 }
