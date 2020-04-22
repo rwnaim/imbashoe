@@ -48,4 +48,20 @@ class ProdukController extends ControllerBase
         $produk = new Produk();
         $this->view->produk = Produk::find();
     }
+    public function editAction($id_produk)
+    {
+        $editProduk = Produk::findFirstByid_produk($id_produk);
+        $this->view->produk = $editProduk;
+        echo $this->tag->linkTo(['/', 'Home', 'class' => 'btn btn-primary']);
+    }
+    public function hapusAction($id_produk)
+    {
+        $prod = Produk::findFirstByid_produk($id_produk);
+        $success = $prod->delete();
+        if($success)
+        {
+            $this->flashSession->error('Produk berhasil dihapus.');
+        }
+        echo $this->tag->linkTo(['/', 'Home', 'class' => 'btn btn-primary']);
+    }
 }
