@@ -1,7 +1,6 @@
 <?php
-
-use Phalcon\Mvc\Model;
 namespace App\Models;
+use Phalcon\Mvc\Model as Model;
 
 class Users extends Model
 {
@@ -20,7 +19,7 @@ class Users extends Model
         $this->setWriteConnectionService('db');
 
         // Untuk mengeset schema, default : empty string
-        $this->setSchema('pbkk');
+        $this->setSchema('dbo');
 
         // Untuk mengeset nama tabel, default : nama class
         $this->setSource('users');

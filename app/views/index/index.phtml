@@ -1,8 +1,9 @@
 <h1>Hello!</h1>
 
 <a href="/signUp">Sign Up Here!</a>
-
 <?php
+echo $this->tag->linkTo(["listUsers", "View User", 'class' => 'btn btn-primary']);
+echo $this->tag->linkTo(["menu", "Menu", 'class' => 'btn btn-primary']);
     // $db = $this->getDI()->get('db');
     // $sql = "select * from users";
     // $result = $db->fetchOne($sql, \Phalcon\Db\Enum::FETCH_ASSOC);

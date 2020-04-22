@@ -14,3 +14,13 @@ insert into users values('Bastian','bastian.f@gmail.com','admin','keputih','0819
 
 select * from users;
 */
+
+create table produk
+(
+	id_produk INT IDENTITY(1,1) primary key,
+	nama_produk varchar(255) not null,
+	brand_produk varchar(50) not null,
+	deskripsi_produk varchar(255) not null,
+	harga_produk number not null,
+	status_produk boolean not null,	
+);
