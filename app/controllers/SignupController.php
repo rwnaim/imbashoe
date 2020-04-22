@@ -1,8 +1,10 @@
 <?php
+namespace App\Controllers;
 
 use Phalcon\Mvc\Controller;
-namespace App\Controllers;
+
 use App\Models\Users as Users;
+
 class SignupController extends ControllerBase
 {
     public function indexAction()

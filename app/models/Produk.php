@@ -3,14 +3,14 @@ namespace App\Models;
 
 use Phalcon\Mvc\Model as Model;
 
-class Users extends Model
+class Produk extends Model
 {
-    public $id;
-    public $nama;
-    public $email;
-    public $pass;
-    public $alamat;
-    public $no_hp;
+    public $id_produk;
+    public $nama_produk;
+    public $brand_produk;
+    public $deskripsi_produk;
+    public $harga_produk;
+    public $status_produk;
 
     public function initialize(){
         // read data dari db
@@ -23,7 +23,7 @@ class Users extends Model
         $this->setSchema('dbo');
 
         // Untuk mengeset nama tabel, default : nama class
-        $this->setSource('users');
+        $this->setSource('produk');
     }
 
     /**

@@ -1,10 +1,9 @@
-<h1>Hello!</h1>
-
+<h1 align="center"><a href=""><img src="/public/img/logo.png"style="max-height: 300px; max-width: 300px;"></a></h1>
 <a href="/signUp">Sign Up Here!</a>
-<?php
-echo $this->tag->linkTo(["listUsers", "View User", 'class' => 'btn btn-primary']);
-echo $this->tag->linkTo(["menu", "Menu", 'class' => 'btn btn-primary']);
-    // $db = $this->getDI()->get('db');
-    // $sql = "select * from users";
-    // $result = $db->fetchOne($sql, \Phalcon\Db\Enum::FETCH_ASSOC);
-    // echo var_dump($result);
+<?php echo $this->tag->linkTo(["menu", "Menu", 'class' => 'btn btn-primary']); ?>
+<table class="table table-bordered table-hover">
+        <thead class="thead-light">
+        <tr>
+            <th colspan="2">Login</th>
+        </tr>
+        <tr>
