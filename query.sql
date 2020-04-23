@@ -21,6 +21,7 @@ create table produk
 	nama_produk varchar(255) not null,
 	brand_produk varchar(50) not null,
 	deskripsi_produk varchar(255) not null,
-	harga_produk number not null,
-	status_produk boolean not null,	
+	harga_produk money not null,
+	status_produk bit not null,	
 );
+

@@ -1,6 +1,6 @@
 <h1 align="center"><a href=""><img src="/public/img/logo.png" style="max-height: 100px; max-width: 100px;"></a> | Edit Produk</h1>
 
-<form autocomplete="off" method="post" action="{{ url('Produk/update/' ~ produk.id_produk) }}">
+<form autocomplete="off" method="post" action="<?= $this->url->get('Produk/update/' . $produk->id_produk) ?>">
     <table class="table table-bordered table-hover">
         <tbody class="thead-light">
             <tr>

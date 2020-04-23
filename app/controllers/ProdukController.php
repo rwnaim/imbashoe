@@ -5,6 +5,8 @@ use Phalcon\Mvc\Controller;
 
 use App\Models\Produk as Produk;
 
+use App\Validation\ProdukValidation as ProdukValidation;
+
 class ProdukController extends ControllerBase
 {
     public function indexAction()
@@ -56,12 +58,48 @@ class ProdukController extends ControllerBase
     }
     public function hapusAction($id_produk)
     {
+        $produk = new Produk();
         $prod = Produk::findFirstByid_produk($id_produk);
         $success = $prod->delete();
         if($success)
         {
             $this->flashSession->error('Produk berhasil dihapus.');
         }
+        echo 'Produk berhasil dihapus.<br>';
         echo $this->tag->linkTo(['/', 'Home', 'class' => 'btn btn-primary']);
+    }
+    public function updateAction($id_produk)
+    {
+        $produk = new Produk();
+        $valid = new ProdukValidation();
+        $message = $valid->validate($_POST);
+        if(!count($message))
+        {
+            $prod = Produk::findFirstByid_produk($id_produk);
+            $prod->assign(
+                $this->request->getPost(),
+                [
+                    'nama_produk',
+                    'brand_produk',
+                    'deskripsi_produk',
+                    'harga_produk',
+                    'status_produk'
+                ]
+            );
+            // Store and check for errors
+            $success = $prod->save();
+            // $this->flashSession->error('Produk berhasil dirubah.');
+            echo 'Produk berhasil dirubah.';
+            echo $this->tag->linkTo(['/', 'Home', 'class' => 'btn btn-primary']);
+        }
+        else
+        {
+            foreach ($message as $msg) 
+            {
+                $this->flashSession->error($msg->getMessage());
+            }
+            echo $this->tag->linkTo(['/', 'Home', 'class' => 'btn btn-primary']);
+
+        }
     }
 }
