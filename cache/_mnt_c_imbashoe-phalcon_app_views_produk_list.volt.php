@@ -14,8 +14,8 @@
     <tfoot>
     <tr>
         <td colspan="2">Jumlah Produk: <?php echo $produk->count(); ?></td>
+        <!-- <td><a href="<?= $this->url->get('produk/cari') ?>" class='btn btn-primary'>Cari Produk</a></td> -->
         <td colspan='3'><a href="<?= $this->url->get('produk') ?>" class='btn btn-primary'>Tambah Produk</a></td>
-        <td><a href="<?= $this->url->get('Produk/cari/') ?>" class='btn btn-primary'>Cari Produk</a></td>
         <td colspan="2"><a href="<?= $this->url->get('menu') ?>" class='btn btn-primary'>Menu</a></td>
     </tr>
     </tfoot>
@@ -34,3 +34,13 @@
     <?php } ?>
     </tbody>
 </table>
+<div class="col-md-6 login-form-1">
+    <form method="POST" autocomplete="off" action="<?= $this->url->get('Produk/cari') ?>">
+        <div class="form-group">
+            <input type="text" class="form-control" id='nama' name='nama' placeholder="Nama" />
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btnSubmit" />
+        </div>
+    </form>
+</div>
