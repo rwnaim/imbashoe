@@ -1,7 +1,7 @@
 <html>
-    
-    <head>
-        <style>
+
+<head>
+    <style>
         :root {
             --input-padding-x: 1.5rem;
             --input-padding-y: .75rem;
@@ -162,10 +162,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col text-center">
-                                    <a href="{{url('/Produk/list')}}" class="btn btn-lg btn-outline-primary" role="button">List Produk</a>
+                                    <a href="<?= $this->url->get('/Produk/list') ?>" class="btn btn-lg btn-outline-primary" role="button">List Produk</a>
                                 </div>
                             </div>
                         </div>
+                        <!-- <?php echo $this->tag->linkTo(['Produk/list', 'Go back', 'class' => 'btn btn-primary']); ?> -->
                     </div>
                 </div>
             </div>

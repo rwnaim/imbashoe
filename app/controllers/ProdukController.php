@@ -80,16 +80,19 @@ class ProdukController extends ControllerBase
         $this->view->produk = $editProduk;
         echo $this->tag->linkTo(['/produk/list', 'List Produk', 'class' => 'btn btn-primary']);
     }
+
     public function hapusAction($id_produk)
     {
         $produk = new Produk();
         $prod = Produk::findFirstByid_produk($id_produk);
         $success = $prod->delete();
-        if($success)
-        {
-            $this->flashSession->error('Produk berhasil dihapus.');
+        $this->view->success = $success;
+
+        if ($success)
+         {
+            echo "Produk berhasil dihapus. <br>";
         }
-        echo 'Produk berhasil dihapus.<br>';
+        // echo 'Produk berhasil dihapus.<br>';
         echo $this->tag->linkTo(['/produk/list', 'List Produk', 'class' => 'btn btn-primary']);
     }
     public function updateAction($id_produk)
@@ -110,7 +113,7 @@ class ProdukController extends ControllerBase
                     'status_produk',
                 ]
             );
-             if($this->request->hasFiles())
+            if($this->request->hasFiles())
             {
                 $img = $this->request->getUploadedFiles()[0];
                 $path = 'img/'.$img->getName();
@@ -119,9 +122,13 @@ class ProdukController extends ControllerBase
             }
             // Store and check for errors
             $success = $prod->save();
-            // $this->flashSession->error('Produk berhasil dirubah.');
-            echo 'Produk berhasil dirubah.<br>';
+            $this->view->success = $success;
+
+            if ($success) {
+                echo "Produk berhasil diupdate. <br>";
+            } 
             echo $this->tag->linkTo(['/produk/list', 'List Produk', 'class' => 'btn btn-primary']);
+
         }
         else
         {
