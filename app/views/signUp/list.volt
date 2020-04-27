@@ -184,7 +184,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col text-center">
-                                    <a href="{{url('/menu')}}" class="btn btn-lg btn-outline-primary" role="button">Menu</a>
+                                    <a href="{{url('/menu')}}" class="btn btn-lg btn-outline-primary" role="button">Menu</a> &emsp;
+                                    <a href="{{url('/signUp')}}" class="btn btn-lg btn-outline-primary" role="button">Tambah User</a>
                                 </div>
                             </div>
                         </div>
