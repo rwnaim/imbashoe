@@ -4,7 +4,7 @@ CREATE TABLE users
 id_user INT IDENTITY(1,1) primary key,
 nama varchar(255) not null,
 email varchar(255),
-pass varchar(50) not null,
+pass varchar(255) not null,
 alamat varchar(255),
 no_hp varchar(15),
 );

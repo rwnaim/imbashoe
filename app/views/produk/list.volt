@@ -13,8 +13,10 @@
     </thead>
     <tfoot>
     <tr>
-        <td colspan="7">Jumlah Produk: <?php echo $produk->count(); ?></td>
-            <td><a href="{{ url('menu') }}" class='btn btn-primary'>Menu</a></td>
+        <td colspan="2">Jumlah Produk: <?php echo $produk->count(); ?></td>
+        <td colspan='3'><a href="{{ url('produk') }}" class='btn btn-primary'>Tambah Produk</a></td>
+        <td><a href="{{ url('Produk/cari/') }}" class='btn btn-primary'>Cari Produk</a></td>
+        <td colspan="2"><a href="{{ url('menu') }}" class='btn btn-primary'>Menu</a></td>
     </tr>
     </tfoot>
     <tbody>

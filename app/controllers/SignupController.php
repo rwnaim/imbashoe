@@ -21,11 +21,12 @@ class SignupController extends ControllerBase
             [
                 'nama',
                 'email',
-                'pass',
                 'alamat',
-                'no_hp'
-            ]
-        );
+                'no_hp',
+                ]
+            );
+        $pass = $this->request->getPost('pass');
+        $user->pass = $this->security->hash($pass);
         // Store and check for errors
         $success = $user->save();
 

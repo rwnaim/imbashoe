@@ -13,8 +13,10 @@
     </thead>
     <tfoot>
     <tr>
-        <td colspan="7">Jumlah Produk: <?php echo $produk->count(); ?></td>
-            <td><a href="<?= $this->url->get('menu') ?>" class='btn btn-primary'>Menu</a></td>
+        <td colspan="2">Jumlah Produk: <?php echo $produk->count(); ?></td>
+        <td colspan='3'><a href="<?= $this->url->get('produk') ?>" class='btn btn-primary'>Tambah Produk</a></td>
+        <td><a href="<?= $this->url->get('Produk/cari/') ?>" class='btn btn-primary'>Cari Produk</a></td>
+        <td colspan="2"><a href="<?= $this->url->get('menu') ?>" class='btn btn-primary'>Menu</a></td>
     </tr>
     </tfoot>
     <tbody>

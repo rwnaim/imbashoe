@@ -2,4 +2,4 @@
     <?php echo $message; ?>
 </div>
 
-<?php echo $this->tag->linkTo(['/', 'Go back', 'class' => 'btn btn-primary']); ?>
+<?php echo $this->tag->linkTo(['Produk/list', 'Go back', 'class' => 'btn btn-primary']); ?>

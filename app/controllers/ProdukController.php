@@ -13,6 +13,13 @@ class ProdukController extends ControllerBase
     {
 
     }
+    public function cariAction()
+    {
+        $cari_nama = $this->request->getPost('nama');
+        $cari_nama = '%'.$cari_nama.'%';
+        $result = Produk::find('nama_produk like :cari_nama:');
+        $this->view->produk = $result;
+    }
     public function tambahAction()
     {
         $produk = new Produk();
