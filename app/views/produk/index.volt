@@ -8,8 +8,8 @@
         }
 
         body {
-            background: #0099ff;
-            background: linear-gradient(to right, rgb(0, 98, 230), rgb(63, 178, 255));
+            background: #9900ff;
+            background: linear-gradient(to right, rgb(91, 4, 253), rgb(30, 5, 255));
         }
 
         .card-signin {
@@ -154,7 +154,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-center"><a href=""><img src="/public/img/logo.png"
                                     style="max-height: 300px; max-width: 300px;"></a>Tambah Produk</h3>
-                        <form method="POST" autocomplete="off" action="{{url('produk/tambah')}}">
+                        <form method="POST" autocomplete="off" action="{{url('produk/tambah')}}" enctype="multipart/form-data">
                             <div class="form-label-group">
                                 <input type="text" name='nama_produk' id="nama_produk" class="form-control" placeholder="Nama Produk"
                                     required autofocus>
@@ -179,15 +179,25 @@
                                 <label for="harga_produk">Harga Produk</label>
                             </div>
                             
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Foto Produk</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="foto_produk" name='foto_produk'>
+                                    <label class="custom-file-label" for="foto_produk">Pilih File</label>
+                                </div>
+                            </div>
+
                             <div class="form-label-group">
                                 <input type="text" name='status_produk' id="status_produk" class="form-control" placeholder="Status Produk" required
                                     autofocus>
                                 <label for="status_produk">Status Produk (0:Kosong, 1:Tersedia)</label>
                             </div>
 
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase"
+                            <button class="btn btn-lg btn-primary btn-block"
                                 type="submit">Tambah Produk</button>
-                            <a href="{{url('/produk/list')}}" class="btn btn-lg btn-primary btn-block text-uppercase"
+                            <a href="{{url('/produk/list')}}" class="btn btn-lg btn-primary btn-block"
                                 role="button">List Produk</a>
                         </form>
                     </div>

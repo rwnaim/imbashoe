@@ -8,8 +8,8 @@
         }
 
         body {
-            background: #007bff;
-            background: linear-gradient(to right, #0062E6, #33AEFF);
+            background: #00ffff;
+            background: linear-gradient(to right, rgb(59, 253, 253), rgb(16, 236, 200));
         }
 
         .card-signin {
@@ -181,8 +181,13 @@
                                 <?php } ?>
                             </tbody>
                         </table>
-                        <a href="<?= $this->url->get('/menu') ?>" class="btn btn-lg btn-primary btn-block text-uppercase"
-                                                    role="button">Menu</a>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <a href="<?= $this->url->get('/menu') ?>" class="btn btn-lg btn-outline-primary" role="button">Menu</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

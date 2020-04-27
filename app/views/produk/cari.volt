@@ -154,7 +154,7 @@
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <h3 class="card-title text-center"><a href=""><img src="/public/img/logo.png"
-                                    style="max-height: 300px; max-width: 300px;"></a><br>Cari Produk
+                                    style="max-height: 300px; max-width: 300px;"></a><br>Cari Produk | '<?php echo $nama_prod; ?>'
                         </h3>
                         <table class="table table-bordered table-hover">
                             <thead class="thead-light">

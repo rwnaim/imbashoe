@@ -164,9 +164,9 @@
                                 <label for="pass">Password</label>
                             </div>
 
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign
                                 in</button>
-                            <a href="<?= $this->url->get('/signUp') ?>" class="btn btn-lg btn-primary btn-block text-uppercase" role="button">Register</a>
+                            <a href="<?= $this->url->get('/signUp') ?>" class="btn btn-lg btn-primary btn-block" role="button">Register</a>
                         </form>
                     </div>
                 </div>

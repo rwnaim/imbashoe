@@ -16,6 +16,7 @@ class ProdukController extends ControllerBase
     public function cariAction()
     {
         $cari_nama = $this->request->getPost('nama');
+        $this->view->nama_prod = $cari_nama;
         $cari_nama = '%'.$cari_nama.'%';
         // echo $cari_nama;
         $produk = Produk::query()
@@ -41,9 +42,16 @@ class ProdukController extends ControllerBase
                 'brand_produk',
                 'deskripsi_produk',
                 'harga_produk',
-                'status_produk'
+                'status_produk',
             ]
         );
+        if($this->request->hasFiles())
+        {
+            $img = $this->request->getUploadedFiles()[0];
+            $path = 'img/'.$img->getName();
+            $produk->foto_produk = $path;
+            $img->moveTo($path);
+        }
 
         // Store and check for errors
         $success = $produk->save();
@@ -99,13 +107,20 @@ class ProdukController extends ControllerBase
                     'brand_produk',
                     'deskripsi_produk',
                     'harga_produk',
-                    'status_produk'
+                    'status_produk',
                 ]
             );
+             if($this->request->hasFiles())
+            {
+                $img = $this->request->getUploadedFiles()[0];
+                $path = 'img/'.$img->getName();
+                $produk->foto_produk = $path;
+                $img->moveTo($path);
+            }
             // Store and check for errors
             $success = $prod->save();
             // $this->flashSession->error('Produk berhasil dirubah.');
-            echo 'Produk berhasil dirubah.';
+            echo 'Produk berhasil dirubah.<br>';
             echo $this->tag->linkTo(['/produk/list', 'List Produk', 'class' => 'btn btn-primary']);
         }
         else

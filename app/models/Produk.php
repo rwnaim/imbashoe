@@ -10,6 +10,7 @@ class Produk extends Model
     public $brand_produk;
     public $deskripsi_produk;
     public $harga_produk;
+    public $foto_produk;
     public $status_produk;
 
     public function initialize(){

@@ -170,6 +170,7 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th>ID Produk</th>
+                                    <th>Foto Produk</th>
                                     <th>Nama Produk</th>
                                     <th>Brand Produk</th>
                                     <th>Deskripsi Produk</th>
@@ -182,6 +183,7 @@
                                 <?php foreach ($produk as $prod) { ?>
                                 <tr>
                                     <td><?= $prod->id_produk ?></td>
+                                    <td><img src='<?= $this->url->get($prod->foto_produk) ?>' class="mx-auto d-block" width="100" height="100"></td>
                                     <td><?= $prod->nama_produk ?></td>
                                     <td><?= $prod->brand_produk ?></td>
                                     <td><?= $prod->deskripsi_produk ?></td>
@@ -197,7 +199,7 @@
                             <div class="row">
                                 <div class="col text-center">
                                     <a href="<?= $this->url->get('/menu') ?>" class="btn btn-lg btn-outline-primary"
-                                        role="button">Menu</a>
+                                        role="button">Menu</a> &emsp;
                                     <a href="<?= $this->url->get('/produk') ?>" class="btn btn-lg btn-outline-primary" role="button">Tambah Produk</a>
                                 </div>
                             </div>

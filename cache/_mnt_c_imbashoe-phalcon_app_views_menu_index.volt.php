@@ -154,9 +154,9 @@
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <h3 class="card-title text-center"><a href=""><img src="/public/img/logo.png"
-                                    style="max-height: 300px; max-width: 300px;"></a><br>Menu | <?php echo $this->tag->linkTo(["Session/logout", "Logout", 'class' => 'btn btn-primary']); ?></h3>
-                            <a href="<?= $this->url->get('/signUp/list') ?>" class="btn btn-lg btn-outline-primary btn-block text-uppercase" role="button">All Users</a>
-                            <a href="<?= $this->url->get('/Produk/list') ?>" class="btn btn-lg btn-outline-primary btn-block text-uppercase" role="button">List Produk</a>
+                                    style="max-height: 300px; max-width: 300px;"></a><br>Menu | &nbsp;<?php echo $this->tag->linkTo(["Session/logout", "Logout", 'class' => 'btn btn-primary']); ?></h3>
+                            <a href="<?= $this->url->get('/signUp/list') ?>" class="btn btn-lg btn-outline-primary btn-block" role="button">All Users</a>
+                            <a href="<?= $this->url->get('/Produk/list') ?>" class="btn btn-lg btn-outline-primary btn-block" role="button">List Produk</a>
                     </div>
                 </div>
             </div>

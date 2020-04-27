@@ -44,6 +44,14 @@ class ProdukValidation extends Validation
                 ]
             )
         );
+        // $this->add(
+        //     'foto_produk',
+        //     new PresenceOf(
+        //         [
+        //             'message' => 'Foto Produk harus diisi',
+        //         ]
+        //     )
+        // );
         $this->add(
             'status_produk',
             new PresenceOf(
