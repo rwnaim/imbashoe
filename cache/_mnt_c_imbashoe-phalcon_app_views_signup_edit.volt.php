@@ -1,3 +1,39 @@
+<!-- <h1 align="center"><a href=""><img src="/public/img/logo.png" style="max-height: 100px; max-width: 100px;"></a> | Edit Produk</h1>
+
+<form autocomplete="off" method="post" action="<?= $this->url->get('Produk/update/' . $produk->id_produk) ?>">
+    <table class="table table-bordered table-hover">
+        <tbody class="thead-light">
+            <tr>
+                <th><label for="nama_produk">Nama Produk</label></th>
+                <th><?php echo $this->tag->textField("nama_produk"); ?></th>
+            </tr>
+            <tr>
+                <th><label for="brand_produk">Brand</label></th>
+                <th><?php echo $this->tag->textField("brand_produk"); ?></th>
+            </tr>
+            <tr>
+                <th><label for="deskripsi_produk">Deskripsi Produk</label></th>
+                <th><?php echo $this->tag->textField("deskripsi_produk"); ?></th>
+            </tr>
+            <tr>
+                <th><label for="harga_produk">Harga Produk</label></th>
+                <th><?php echo $this->tag->textField("harga_produk"); ?></th>
+            </tr>
+            <tr>
+                <th><label for="status_produk">Status Produk(1:tersedia, 0: kosong)</label></th>
+                <th><?php echo $this->tag->textField("status_produk"); ?></th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <h3 align="center"><?php echo $this->tag->submitButton(["Submit", 'class' => 'btn btn-primary']); ?>
+                        &emsp; <?php echo $this->tag->linkTo(["menu", "Back to Menu", 'class' => 'btn btn-primary']); ?>
+                    </h3>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</form> -->
+
 <html>
 
 <head>
@@ -150,58 +186,47 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-sm-300 col-md-150 col-lg-300 mx-auto">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <h3 class="card-title text-center"><a href=""><img src="/public/img/logo.png"
-                                    style="max-height: 300px; max-width: 300px;"></a><br>List Produk | Quantity:
-                            <?php echo $produk->count(); ?>
-                        </h3>
-                        <form method="POST" autocomplete="off" action="<?= $this->url->get('Produk/cari') ?>" >
+                                    style="max-height: 300px; max-width: 300px;"></a>Update User</h3>
+                        <form autocomplete="off" method="post" action="<?= $this->url->get('signUp/update/' . $user->id_user) ?>">
+                            <div class="form-label-group">
+                                <input type="text" name='nama' id="nama" class="form-control" placeholder="Nama"
+                                    required autofocus>
+                                <label for="nama">Nama</label>
+                            </div>
 
-                        <div class="input-group mb-4">
-                            <input type="text" class="form-control" id='nama' name='nama' placeholder="Cari Produk" aria-label="Cari Produk">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-primary btn-block" type="submit">Cari</button>
+                            <div class="form-label-group">
+                                <input type="email" id="email" name="email" class="form-control"
+                                    placeholder="Alamat Email" required autofocus>
+                                <label for="email">Alamat Email</label>
                             </div>
-                        </div>
+
+                            <div class="form-label-group">
+                                <input type="password" name='pass' id="pass" class="form-control" placeholder="Password"
+                                    required>
+                                <label for="pass">Password</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="text" name='alamat' id="alamat" class="form-control" placeholder="Alamat"
+                                    required autofocus>
+                                <label for="alamat">Alamat</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="text" name='no_hp' id="no_hp" class="form-control"
+                                    placeholder="Nomor Telefon" required autofocus>
+                                <label for="no_hp">Nomor Telefon</label>
+                            </div>
+
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase"
+                                type="submit">Submit</button>
+                            <a href="<?= $this->url->get('/signUp/list') ?>" class="btn btn-lg btn-primary btn-block text-uppercase"
+                                role="button">List User</a>
                         </form>
-                        <table class="table table-bordered table-hover">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th>ID Produk</th>
-                                    <th>Nama Produk</th>
-                                    <th>Brand Produk</th>
-                                    <th>Deskripsi Produk</th>
-                                    <th>Harga Produk</th>
-                                    <th>Status Produk</th>
-                                    <th colspan="2"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($produk as $prod) { ?>
-                                <tr>
-                                    <td><?= $prod->id_produk ?></td>
-                                    <td><?= $prod->nama_produk ?></td>
-                                    <td><?= $prod->brand_produk ?></td>
-                                    <td><?= $prod->deskripsi_produk ?></td>
-                                    <td><?= $prod->harga_produk ?></td>
-                                    <td><?= $prod->status_produk ?></td>
-                                    <td><a href="<?= $this->url->get('Produk/edit/' . $prod->id_produk) ?>" class='btn btn-outline-primary btn-block'>Edit</a><br>
-                                        <a href="<?= $this->url->get('Produk/hapus/' . $prod->id_produk) ?>" class='btn btn-outline-primary btn-block'>Hapus</a></td>
-                                </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <a href="<?= $this->url->get('/menu') ?>" class="btn btn-lg btn-outline-primary"
-                                        role="button">Menu</a>
-                                    <a href="<?= $this->url->get('/produk') ?>" class="btn btn-lg btn-outline-primary" role="button">Tambah Produk</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

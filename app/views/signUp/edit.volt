@@ -8,8 +8,8 @@
         }
 
         body {
-            background: #01a2ff;
-            background: linear-gradient(to right, rgb(42, 195, 241), rgb(51, 116, 255));
+            background: #007bff;
+            background: linear-gradient(to right, #0062E6, #33AEFF);
         }
 
         .card-signin {
@@ -154,9 +154,43 @@
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <h3 class="card-title text-center"><a href=""><img src="/public/img/logo.png"
-                                    style="max-height: 300px; max-width: 300px;"></a><br>Menu | <?php echo $this->tag->linkTo(["Session/logout", "Logout", 'class' => 'btn btn-primary']); ?></h3>
-                            <a href="<?= $this->url->get('/signUp/list') ?>" class="btn btn-lg btn-outline-primary btn-block text-uppercase" role="button">All Users</a>
-                            <a href="<?= $this->url->get('/Produk/list') ?>" class="btn btn-lg btn-outline-primary btn-block text-uppercase" role="button">List Produk</a>
+                                    style="max-height: 300px; max-width: 300px;"></a>Update User</h3>
+                        <form autocomplete="off" method="post" action="{{ url('signUp/update/' ~ user.id_user) }}">
+                            <div class="form-label-group">
+                                <input type="text" name='nama' id="nama" class="form-control" placeholder="Nama"
+                                    required autofocus>
+                                <label for="nama">Nama</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="email" id="email" name="email" class="form-control"
+                                    placeholder="Alamat Email" required autofocus>
+                                <label for="email">Alamat Email</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="password" name='pass' id="pass" class="form-control" placeholder="Password"
+                                    required>
+                                <label for="pass">Password</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="text" name='alamat' id="alamat" class="form-control" placeholder="Alamat"
+                                    required autofocus>
+                                <label for="alamat">Alamat</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="text" name='no_hp' id="no_hp" class="form-control"
+                                    placeholder="Nomor Telefon" required autofocus>
+                                <label for="no_hp">Nomor Telefon</label>
+                            </div>
+
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase"
+                                type="submit">Submit</button>
+                            <a href="{{url('/signUp/list')}}" class="btn btn-lg btn-primary btn-block text-uppercase"
+                                role="button">List User</a>
+                        </form>
                     </div>
                 </div>
             </div>

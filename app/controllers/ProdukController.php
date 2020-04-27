@@ -16,7 +16,8 @@ class ProdukController extends ControllerBase
     public function cariAction()
     {
         $cari_nama = $this->request->getPost('nama');
-        echo $cari_nama;
+        $cari_nama = '%'.$cari_nama.'%';
+        // echo $cari_nama;
         $produk = Produk::query()
             ->where('nama_produk LIKE :cari_nama:')
             ->bind(
@@ -69,7 +70,7 @@ class ProdukController extends ControllerBase
     {
         $editProduk = Produk::findFirstByid_produk($id_produk);
         $this->view->produk = $editProduk;
-        echo $this->tag->linkTo(['/', 'Home', 'class' => 'btn btn-primary']);
+        echo $this->tag->linkTo(['/produk/list', 'List Produk', 'class' => 'btn btn-primary']);
     }
     public function hapusAction($id_produk)
     {
@@ -81,7 +82,7 @@ class ProdukController extends ControllerBase
             $this->flashSession->error('Produk berhasil dihapus.');
         }
         echo 'Produk berhasil dihapus.<br>';
-        echo $this->tag->linkTo(['/', 'Home', 'class' => 'btn btn-primary']);
+        echo $this->tag->linkTo(['/produk/list', 'List Produk', 'class' => 'btn btn-primary']);
     }
     public function updateAction($id_produk)
     {
@@ -105,7 +106,7 @@ class ProdukController extends ControllerBase
             $success = $prod->save();
             // $this->flashSession->error('Produk berhasil dirubah.');
             echo 'Produk berhasil dirubah.';
-            echo $this->tag->linkTo(['/', 'Home', 'class' => 'btn btn-primary']);
+            echo $this->tag->linkTo(['/produk/list', 'List Produk', 'class' => 'btn btn-primary']);
         }
         else
         {
@@ -113,7 +114,7 @@ class ProdukController extends ControllerBase
             {
                 $this->flashSession->error($msg->getMessage());
             }
-            echo $this->tag->linkTo(['/', 'Home', 'class' => 'btn btn-primary']);
+            echo $this->tag->linkTo(['/menu', 'Menu', 'class' => 'btn btn-primary']);
 
         }
     }

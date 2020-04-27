@@ -5,7 +5,6 @@ namespace App\Controllers;
 
 class ErrorController extends ControllerBase
 {
-
     public function notFoundAction()
     {
         echo '404 - not found<br>';
@@ -18,6 +17,5 @@ class ErrorController extends ControllerBase
         echo $this->tag->linkTo(['/', 'Menu', 'class' => 'btn btn-primary']);
 
     }
-
 }
 
