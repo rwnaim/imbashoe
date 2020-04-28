@@ -57,10 +57,13 @@
 ## Merubah Produk (Edit)
 ### Admin dapat merubah produk di aplikasi
 ![editProduk](/screenshot/editProduk.jpg)
-
-## List Produk setelah diedit
+### Jika data berhasil diedit maka akan muncul tampilan:
 ![editProdukSuccess](/screenshot/editProdukSuccess.jpg)
+### List produk setelah produk 1 diedit
+![listEditProduk](/screenshot/listEditProduk.jpg)
 
 ## Menghapus Produk
-Admin dapat menghapus produk dari aplikasi. Misalkan menghapus produk 1. Jika berhasil:
+### Admin dapat menghapus produk dari aplikasi. Misalkan menghapus produk 1. Jika berhasil:
 ![hapusProduk](/screenshot/hapus.jpg)
+### List produk setelah produk 1 dihapus
+![listHapusProduk](/screenshot/ListHapusProduk.jpg)
