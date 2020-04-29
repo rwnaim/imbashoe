@@ -12,6 +12,13 @@ $router->add('/', [
     'action' =>  'index'
 ]);
 
+
+// $router->add('/signup', [
+//     'namespace'=>'App\Controllers',
+//     'controller'=> 'signup',
+//     'action'=>'signup'
+// ]);
+
 $router->add('/:controller', [
     'namespace' => 'App\Controllers',
     'controller' =>  1,
@@ -44,5 +51,6 @@ $router->notFound([
     'controller' => 'error',
     'action' => 'notFound',
 ]);
+
 
 $router->handle($di->get('request_uri'));
