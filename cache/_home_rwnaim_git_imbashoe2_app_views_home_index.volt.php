@@ -211,7 +211,7 @@
 										<div class="nav-inner">	
 											<ul class="nav main-menu menu navbar-nav">
 												<!-- <a href="<?= $this->url->get('/produk') ?>" type="button" class="btn-sm btn-primary">Produk</a> -->
-													<li class="active"><a href="#">Home</a></li>
+													<li class="active"><a href="/home">Home</a></li>
 													<li><a href="<?= $this->url->get('/produk') ?>">Product</a></li>												
 													<li><a href="#">Service</a></li>
 													<li><a href="#">Shop</i><span class="new">New</span></a>
@@ -425,7 +425,7 @@
 			<div class="col-lg-3 col-md-6 col-12">
 				<!-- Start Single Service -->
 				<div class="single-service">
-					<i class="ti-rocket"></i>
+					<i class="fa fa-rocket" aria-hidden="true"></i>
 					<h4>Free shiping</h4>
 					<p>Orders over $100</p>
 				</div>
@@ -434,7 +434,7 @@
 			<div class="col-lg-3 col-md-6 col-12">
 				<!-- Start Single Service -->
 				<div class="single-service">
-					<i class="ti-reload"></i>
+					<i class="fa fa-refresh" aria-hidden="true"></i>
 					<h4>Free Return</h4>
 					<p>Within 30 days returns</p>
 				</div>
@@ -443,7 +443,7 @@
 			<div class="col-lg-3 col-md-6 col-12">
 				<!-- Start Single Service -->
 				<div class="single-service">
-					<i class="ti-lock"></i>
+					<i class="fa fa-lock" aria-hidden="true"></i>
 					<h4>Sucure Payment</h4>
 					<p>100% secure payment</p>
 				</div>
@@ -452,7 +452,7 @@
 			<div class="col-lg-3 col-md-6 col-12">
 				<!-- Start Single Service -->
 				<div class="single-service">
-					<i class="ti-tag"></i>
+					<i class="fa fa-tag" aria-hidden="true"></i>
 					<h4>Best Peice</h4>
 					<p>Guaranteed price</p>
 				</div>
@@ -613,8 +613,8 @@
 								<a href="index.volt"><img src="/img/Logoimba.png" alt="#" width="100px"></a>
 							</div>
 							<p class="text">Imbashoe adalah perusahaan sepatu yang telah berdiri sejak April 2020. Memang baru, namun Imbashoe telah menjual lebih dari 200.000 produk selama 1 bulan pertama didirikan</p>
-							<p class="call">Anda ingin bertanya mengenai produk Kami? Hubungi <span><a href="https://api.whatsapp.com/send?phone=6282234361869&text=Halo+Admin+Imbashoe%2C+saya+mau+bertanya+mengenai+produk+...">082234361869</a></span></p>
-							<a type="button" class="btn btn-primary" value="kirimPesan" href="https://api.whatsapp.com/send?phone=6282234361869&text=Halo+Admin+Imbashoe%2C+saya+mau+bertanya+mengenai+produk+...">Kirim Pesan</a>
+							<p class="call">Anda ingin bertanya mengenai produk Kami? Hubungi <span><a href="https://wa.me/6282234361869?text=Halo+Admin+Imbashoe%2C+saya+mau+bertanya+mengenai+produk+...">082234361869</a></span></p>
+							<a type="button" class="btn btn-primary" value="kirimPesan" href="https://wa.me/6282234361869?text=Halo+Admin+Imbashoe%2C+saya+mau+bertanya+mengenai+produk+...">Kirim Pesan</a>
 						</div>
 						<!-- End Single Widget -->
 					</div>

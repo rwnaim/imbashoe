@@ -96,7 +96,7 @@ class SignupController extends ControllerBase
             $pass = $this->request->getPost('pass');
             $usr->pass = $this->security->hash($pass);
             // Store and check for errors
-            $usr->updated_at = date('Y-m-d h:i:sa');
+            // $usr->updated_at = date('Y-m-d h:i:sa');
             $success = $usr->save();
             // $this->flashSession->error('Produk berhasil dirubah.');
             echo 'User berhasil dirubah!! <br>';
