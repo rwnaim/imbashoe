@@ -102,38 +102,7 @@
 								</div>
                             </div>
                            
-							<div class="sinlge-bar shopping">
-								<a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i> <span class="total-count">2</span></a>
-								<!-- Shopping Item -->
-								<div class="shopping-item">
-									<div class="dropdown-cart-header">
-										<span>2 Items</span>
-										<a href="#">View Wishlist</a>
-									</div>
-									<ul class="shopping-list">
-										<li>
-											<a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-											<a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-											<h4><a href="#">Woman Ring</a></h4>
-											<p class="quantity">1x - <span class="amount">$99.00</span></p>
-										</li>
-										<li>
-											<a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-											<a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-											<h4><a href="#">Woman Necklace</a></h4>
-											<p class="quantity">1x - <span class="amount">$35.00</span></p>
-										</li>
-									</ul>
-									<div class="bottom">
-										<div class="total">
-											<span>Total</span>
-											<span class="total-amount">$134.00</span>
-										</div>
-										<a href="checkout.html" class="btn animate">Lihat Selengkapnya</a>
-									</div>
-								</div>
-								<!--/ End Shopping Item -->
-							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -301,10 +270,10 @@
 								<!-- Start Single Tab -->
 								
 								<div class="tab-pane fade show active" id="man" role="tabpanel">
-									{% for prod in produk %}
+									
 									<div class="tab-single">
 										<div class="row">
-											
+											{% for prod in produk %}
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -331,17 +300,19 @@
 													</div>
 												</div>
 											</div>
+											{% endfor %}
 										</div>
 									</div>
-									{% endfor %}
+									
 								</div>
 								
 											
 								<!-- Start Single Tab -->
 								<div class="tab-pane fade" id="women" role="tabpanel">
-									{% for prod in produk %}
+									
 									<div class="tab-single">
 										<div class="row">
+											{% for prod in produk %}
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -368,16 +339,18 @@
 													</div>
 												</div>
 											</div>
+											{% endfor %}
 										</div>
 									</div>
-									{% endfor %}
+									
 								</div>
 								<!--/ End Single Tab -->
 								<!-- Start Single Tab -->
 								<div class="tab-pane fade" id="kids" role="tabpanel">
-									{% for prod in produk %}
+									
 									<div class="tab-single">
 										<div class="row">
+											{% for prod in produk %}
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
@@ -404,9 +377,10 @@
 													</div>
 												</div>
 											</div>
+											{% endfor %}
 										</div>
 									</div>
-									{% endfor %}
+									
 								</div>
 								<!--/ End Single Tab -->
 							</div>
@@ -486,7 +460,7 @@
 	<!-- End Shop Newsletter -->
 	
 	<!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -495,7 +469,7 @@
                     <div class="modal-body">
                         <div class="row no-gutters">
                             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                <!-- Product Slider -->
+                                 Product Slider 
 									<div class="product-gallery">
 										<div class="quickview-slider-active">
 											<div class="single-slider">
@@ -512,7 +486,7 @@
 											</div>
 										</div>
 									</div>
-								<!-- End Product slider -->
+								 End Product slider 
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                 <div class="quickview-content">
@@ -559,7 +533,7 @@
 										</div>
 									</div>
                                     <div class="quantity">
-										<!-- Input Order -->
+										-- Input Order --
 										<div class="input-group">
 											<div class="button minus">
 												<button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
@@ -573,7 +547,7 @@
 												</button>
 											</div>
 										</div>
-										<!--/ End Input Order -->
+										--/ End Input Order --
 									</div>
 									<div class="add-to-cart">
 										<a href="#" class="btn">Add to cart</a>
@@ -595,7 +569,7 @@
                     </div>
                 </div>
             </div>
-    </div>
+    </div> -->
     <!-- Modal end -->
 	
 	<!-- Start Footer Area -->
@@ -651,10 +625,10 @@
 							<!-- Single Widget -->
 							<div class="contact">
 								<ul>
-									<li>NO. 342 - London Oxford Street.</li>
-									<li>012 United Kingdom.</li>
-									<li>info@eshop.com</li>
-									<li>+032 3456 7890</li>
+									<li>Jl. Sukolilo Kasih, No.5, Keputih, Surabaya</li>
+									<li>Indonesia</li>
+									<li>info@imbashoe.com</li>
+									<li>0822 3436 1869</li>
 								</ul>
 							</div>
 							<!-- End Single Widget -->
@@ -677,7 +651,7 @@
 					<div class="row">
 						<div class="col-lg-6 col-12">
 							<div class="left">
-								<p>Copyright © 2020 <a href="http://www.wpthemesgrid.com" target="_blank">Wpthemesgrid</a>  -  All Rights Reserved.</p>
+								<p>Copyright © 2020 <a href="#" target="_blank">Imbashoe</a>  -  All Rights Reserved.</p>
 							</div>
 						</div>
 						<div class="col-lg-6 col-12">

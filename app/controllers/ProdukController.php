@@ -15,6 +15,11 @@ class ProdukController extends ControllerBase
     {
 
     }
+    public function detailAction()
+    {
+        $produk = new Produk();
+        $this->view->produk = Produk::find($id_produk);
+    }
     public function cariAction()
     {
         $cari_nama = $this->request->getPost('nama');

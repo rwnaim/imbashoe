@@ -12,6 +12,10 @@ class SessionController extends \Phalcon\Mvc\Controller
     {
 
     }
+    public function produkAction()
+    {
+        
+    }
     public function loginAction()
     {
         $username = $this->request->getPost('username', 'string');

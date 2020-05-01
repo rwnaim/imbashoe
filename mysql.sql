@@ -22,3 +22,12 @@ CREATE TABLE produk
     status_produk bit not null,	
     PRIMARY KEY (id_produk)
 );
+
+CREATE TABLE wishlist
+(
+    id_wishlist INT not null AUTO_INCREMENT,
+    id_produk INT,
+    PRIMARY KEY (id_wishlist),
+    FOREIGN KEY (id_produk) REFERENCES produk(id_produk)
+    
+);
