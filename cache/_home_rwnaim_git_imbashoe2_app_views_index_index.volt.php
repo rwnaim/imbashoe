@@ -17,7 +17,8 @@
 	
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?= $this->url->getStatic('css/signin.css') ?>" type="text/css">
+	<link rel="stylesheet" href="<?= $this->url->getStatic('css/signin.css') ?>" type="text/css">
+	
     <!-- <link rel="stylesheet" href="<?= $this->url->getStatic('css/fontawesome.min.css') ?>" type="text/css"> -->
 </head>
 <body class="js">	
@@ -36,12 +37,12 @@
 						<!--/ End Logo -->
 						<!-- Search Form -->
 						<div class="search-top">
-							<div class="top-search"><a href="#0"><img src="SVG/search-white.svg"width="20px"></a></div>
+							<div class="top-search"><a href="#"><img src="/SVG/search-white.svg"width="20px"></a></div>
 							<!-- Search Form -->
 							<div class="search-top">
-								<form class="search-form">
-									<input type="text" placeholder="Search here..." name="search">
-									<button value="search" type="submit"><img class="searchsvg" src="SVG/search-white.svg" width="20px"></button>
+								<form method="POST" autocomplete="off"  action="<?= $this->url->get('produk/cari') ?>">
+									<input type="text" placeholder="Search here..." name="nama">
+									<button class="btnn"  type="button"><img class="searchsvg" src="/SVG/search-white.svg" width="20px"></button>
 								</form>
 							</div>
 							<!--/ End Search Form -->
@@ -53,8 +54,8 @@
 						<div class="search-bar-top">
 							<div class="search-bar ">
 								
-								<form class="posisiform">
-									<input name="search" placeholder="Search Products Here....." type="search">
+								<form method="POST" autocomplete="off"  action="<?= $this->url->get('produk/cari') ?>">
+									<input name="nama" placeholder="Search Products Here....." type="nama">
 								</form>
 								<select class="form-control" id="form_control">
 									<option selected="selected">All Category</option>
@@ -62,7 +63,7 @@
 									<option>Women</option>
 									<option>Kids item</option>
 								</select>
-								<form>
+								<form method="POST" autocomplete="off"  action="<?= $this->url->get('produk/cari') ?>">
 									<button class="btnn"><img class="searchsvg" src="SVG/search-white.svg" width="20px"></button>
 								</form>
 								
@@ -73,25 +74,23 @@
 					<div class="col-lg-2 col-md-3 col-12">
 						<div class="right-bar">
 							<!-- Search Form -->
-							
 							<div class="sinlge-bar signin">
-                                <a href="#" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+								<a href="#" class="single-icon">Login</a>
                                 <div class="signin-popup">
 									<div class="dropdown-cart-header">
-                                        <p class="signin-text">Sign In</p>
+                                        <p class="signin-text">Login</p>
                                         <div class="sign-form">
-                                            <form method="POST" class="form-signin">
+                                            <form method="POST" action="<?= $this->url->get('Session/login') ?>" autocomplete="off" class="form-signin">
                                                 
-                                                <label for="inputEmail" class="sr-only">Email address</label>
-                                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                                                <label for="inputPassword" class="sr-only">Password</label>
-                                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                                                <div class="checkbox mb-3">
-                                                  <label>
-                                                    <input type="checkbox" value="remember-me"> Remember me
-                                                  </label>
-                                                </div>
-                                                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                                                <label for="username" class="sr-only">Username</label>
+                                                <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
+                                                <label for="pass" class="sr-only">Password</label>
+                                                <input type="password" name="pass" id="pass" class="form-control" placeholder="Password" required>
+                                                <div class="custom-control custom-checkbox" id="checkboxlogin">
+													<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+													<label class="custom-control-label" for="defaultUnchecked">Remember me</label>
+												</div>
+                                                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
                                                 <div class="belumpunyaakun">
                                                     <p>Belum punya akun?</p> <a href="<?= $this->url->get('/signup') ?>"> Daftar sekarang</a>
                                                 </div>  
@@ -146,82 +145,78 @@
 				<div class="cat-nav-head">
 					<div class="row">
 						<div class="col-lg-3">
-							<div class="all-category">
-								<h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
-								<ul class="main-category">
-									<li><a href="#">New Arrivals<i class="fa fa-angle-right"></i></a>
-										<ul class="sub-category">
-											<li><a href="#">accessories</a></li>
-											<li><a href="#">best selling</a></li>
-											<li><a href="#">top 100 offer</a></li>
-											<li><a href="#">sunglass</a></li>
-											<li><a href="#">watch</a></li>
-											<li><a href="#">man’s product</a></li>
-											<li><a href="#">ladies</a></li>
-											<li><a href="#">westrn dress</a></li>
-											<li><a href="#">denim </a></li>
-										</ul>
-									</li>
-									<li class="main-mega"><a href="#">best selling <i class="fa fa-angle-right"></i></a>
-										<ul class="mega-menu">
-											<li class="single-menu">
-												<a href="#" class="title-link">Shop Kid's</a>
-												<div class="image">
-													<img src="https://via.placeholder.com/225x155" alt="#">
-												</div>
-												<div class="inner-link">
-													<a href="#">Kids Toys</a>
-													<a href="#">Kids Travel Car</a>
-													<a href="#">Kids Color Shape</a>
-													<a href="#">Kids Tent</a>
-												</div>
-											</li>
-											<li class="single-menu">
-												<a href="#" class="title-link">Shop Men's</a>
-												<div class="image">
-													<img src="https://via.placeholder.com/225x155" alt="#">
-												</div>
-												<div class="inner-link">
-													<a href="#">Watch</a>
-													<a href="#">T-shirt</a>
-													<a href="#">Hoodies</a>
-													<a href="#">Formal Pant</a>
-												</div>
-											</li>
-											<li class="single-menu">
-												<a href="#" class="title-link">Shop Women's</a>
-												<div class="image">
-													<img src="https://via.placeholder.com/225x155" alt="#">
-												</div>
-												<div class="inner-link">
-													<a href="#">Ladies Shirt</a>
-													<a href="#">Ladies Frog</a>
-													<a href="#">Ladies Sun Glass</a>
-													<a href="#">Ladies Watch</a>
-												</div>
-											</li>
-										</ul>
-									</li>
-									<li><a href="#">accessories</a></li>
-									<li><a href="#">top 100 offer</a></li>
-									<li><a href="#">sunglass</a></li>
-									<li><a href="#">watch</a></li>
-									<li><a href="#">man’s product</a></li>
-									<li><a href="#">ladies</a></li>
-									<li><a href="#">westrn dress</a></li>
-									<li><a href="#">denim </a></li>
-								</ul>
+							<div class="nav main-menu menu navbar-nav">
+								<li><a class="cat-heading" href="#"><i class="fa fa-bars" aria-hidden="true"></i><label><h5>CATEGORIES</label></h5></a>
+								
+									<ul class="dropdown main-category">
+										<li><a href="#">New Arrivals<i class="fa fa-angle-right"></i></a>
+											<ul class="sub-category">
+												<li><a href="#">Best Selling</a></li>
+												<li><a href="#">Top 100 Offer</a></li>
+												<li><a href="#">Men’s Product</a></li>
+												<li><a href="#">Women's Product</a></li>
+												<li><a href="#">Kid's Item</a></li>
+											</ul>
+										</li>
+										<li class="main-mega"><a href="#">best selling <i class="fa fa-angle-right"></i></a>
+											<ul class="mega-menu">
+												<li class="single-menu">
+													<a href="#" class="title-link">Kid's Item</a>
+													<div class="image">
+														<img src="https://via.placeholder.com/225x155" alt="#">
+													</div>
+													<div class="inner-link">
+														<a href="#">Nike</a>
+														<a href="#">Adidas</a>
+														<a href="#">Reebok</a>
+														<a href="#">Puma</a>
+													</div>
+												</li>
+												<li class="single-menu">
+													<a href="#" class="title-link">Shop Men's</a>
+													<div class="image">
+														<img src="https://via.placeholder.com/225x155" alt="#">
+													</div>
+													<div class="inner-link">
+														<a href="#">Converse</a>
+														<a href="#">Nike</a>
+														<a href="#">Adidas</a>
+														<a href="#">Vans</a>
+													</div>
+												</li>
+												<li class="single-menu">
+													<a href="#" class="title-link">Women's Product</a>
+													<div class="image">
+														<img src="https://via.placeholder.com/225x155" alt="#">
+													</div>
+													<div class="inner-link">
+														<a href="#">Sneaker</a>
+														<a href="#">Nike</a>
+														<a href="#">Adidas</a>
+														<a href="#">Vans</a>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li><a href="#">Top 100 Offer</a></li>
+										<li><a href="#">Men’s Product</a></li>
+										<li><a href="#">Womaen's Product</a></li>
+										<li><a href="#">Kid's Item</a></li>
+									</ul>
+								
+								
 							</div>
 						</div>
 						<div class="col-lg-9 col-12">
-							<div class="main-menu"></div>
+							<div class="all-category"></div>
 								<!-- Main Menu -->
 								<nav class="navbar navbar-expand-lg">
 									<div class="navbar-collapse">	
 										<div class="nav-inner">	
 											<ul class="nav main-menu menu navbar-nav">
+												<!-- <a href="<?= $this->url->get('/produk') ?>" type="button" class="btn-sm btn-primary">Produk</a> -->
 													<li class="active"><a href="#">Home</a></li>
-													<li><a href="#">Product</a></li>												
+													<li><a href="<?= $this->url->get('/produk') ?>">Product</a></li>												
 													<li><a href="#">Service</a></li>
 													<li><a href="#">Shop</i><span class="new">New</span></a>
 														<ul class="dropdown">   
@@ -263,7 +258,7 @@
 							<div class="row">
 								<div class="col-lg-7 col-12">
 									<div class="hero-text">
-										<h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
+										<h1><span>NEW </span>Adidas Ultra Boots</h1>
 										<p>Maboriosam in a nesciung eget magnae <br> dapibus disting tloctio in the find it pereri <br> odiy maboriosm.</p>
 										<div class="button">
 											<a href="#" class="btn">Shop Now!</a>
@@ -279,51 +274,6 @@
 		<!--/ End Single Slider -->
 	</section>
 	<!--/ End Slider Area -->
-	
-	<!-- Start Small Banner  -->
-	<section class="small-banner section">
-		<div class="container-fluid">
-			<div class="row">
-				<!-- Single Banner  -->
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
-						<div class="content">
-							<p>Man's Collectons</p>
-							<h3>Summer travel <br> collection</h3>
-							<a href="#">Discover Now</a>
-						</div>
-					</div>
-				</div>
-				<!-- /End Single Banner  -->
-				<!-- Single Banner  -->
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
-						<div class="content">
-							<p>Bag Collectons</p>
-							<h3>Awesome Bag <br> 2020</h3>
-							<a href="#">Shop Now</a>
-						</div>
-					</div>
-				</div>
-				<!-- /End Single Banner  -->
-				<!-- Single Banner  -->
-				<div class="col-lg-4 col-12">
-					<div class="single-banner tab-height">
-						<img src="https://via.placeholder.com/600x370" alt="#">
-						<div class="content">
-							<p>Flash Sale</p>
-							<h3>Mid Season <br> Up to <span>40%</span> Off</h3>
-							<a href="#">Discover Now</a>
-						</div>
-					</div>
-				</div>
-				<!-- /End Single Banner  -->
-			</div>
-		</div>
-	</section>
-	<!-- End Small Banner -->
 	
 	<!-- Start Product Area -->
     <div class="product-area section">
@@ -355,12 +305,13 @@
 								<div class="tab-pane fade show active" id="man" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
+											<?php foreach ($produk as $prod) { ?>
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
 													<div class="product-img">
 														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+															<img class="default-img" src="<?= $this->url->get($prod->foto_produk) ?>" alt="#">
+															<!-- <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#"> -->
 														</a>
 														<div class="button-head">
 															<div class="product-action">
@@ -374,202 +325,15 @@
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html">Women Hot Collection</a></h3>
+														<h3><a href="#"><?= $prod->nama_produk ?></a></h3>
 														<div class="product-price">
-															<span>$29.00</span>
+															<span>Rp <?= $prod->harga_produk ?></span>
 														</div>
 													</div>
 												</div>
 											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">    
-																<a title="Wishlist" href="#">  <i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Pink Show</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="new">New</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Women Pant Collectons</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="price-dec">30% Off</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Cap For Women</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Polo Dress For Women</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="out-of-stock">Hot</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Black Sunglass For Women</a></h3>
-														<div class="product-price">
-															<span class="old">$60.00</span>
-															<span>$50.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!--/ End Single Tab -->
+											<?php } ?>
+											
 								<!-- Start Single Tab -->
 								<div class="tab-pane fade" id="women" role="tabpanel">
 									<div class="tab-single">
@@ -583,9 +347,9 @@
 														</a>
 														<div class="button-head">
 															<div class="product-action">
-																  
+																	
 																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
+																	
 															</div>
 															<div class="product-action-2">
 																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
@@ -596,192 +360,6 @@
 														<h3><a href="product-details.html">Women Hot Collection</a></h3>
 														<div class="product-price">
 															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Pink Show</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="new">New</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Women Pant Collectons</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="price-dec">30% Off</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Cap For Women</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Polo Dress For Women</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="out-of-stock">Hot</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Black Sunglass For Women</a></h3>
-														<div class="product-price">
-															<span class="old">$60.00</span>
-															<span>$50.00</span>
 														</div>
 													</div>
 												</div>
@@ -803,9 +381,9 @@
 														</a>
 														<div class="button-head">
 															<div class="product-action">
-																  
+																	
 																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
+																	
 															</div>
 															<div class="product-action-2">
 																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
@@ -816,852 +394,6 @@
 														<h3><a href="product-details.html">Women Hot Collection</a></h3>
 														<div class="product-price">
 															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Pink Show</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="new">New</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Women Pant Collectons</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="price-dec">30% Off</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Cap For Women</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Polo Dress For Women</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="out-of-stock">Hot</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Black Sunglass For Women</a></h3>
-														<div class="product-price">
-															<span class="old">$60.00</span>
-															<span>$50.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!--/ End Single Tab -->
-								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="accessories" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Women Hot Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Pink Show</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="new">New</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Women Pant Collectons</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="price-dec">30% Off</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Cap For Women</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Polo Dress For Women</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="out-of-stock">Hot</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Black Sunglass For Women</a></h3>
-														<div class="product-price">
-															<span class="old">$60.00</span>
-															<span>$50.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!--/ End Single Tab -->
-								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="essential" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Women Hot Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Pink Show</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="new">New</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Women Pant Collectons</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="price-dec">30% Off</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Cap For Women</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Polo Dress For Women</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="out-of-stock">Hot</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Black Sunglass For Women</a></h3>
-														<div class="product-price">
-															<span class="old">$60.00</span>
-															<span>$50.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!--/ End Single Tab -->
-								<!-- Start Single Tab -->
-								<div class="tab-pane fade" id="prices" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Women Hot Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Pink Show</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="new">New</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Women Pant Collectons</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="price-dec">30% Off</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Awesome Cap For Women</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Polo Dress For Women</a></h3>
-														<div class="product-price">
-															<span>$29.00</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="product-details.html">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-															<span class="out-of-stock">Hot</span>
-														</a>
-														<div class="button-head">
-															<div class="product-action">
-																  
-																<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-																   
-															</div>
-															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="product-details.html">Black Sunglass For Women</a></h3>
-														<div class="product-price">
-															<span class="old">$60.00</span>
-															<span>$50.00</span>
 														</div>
 													</div>
 												</div>
@@ -1677,446 +409,7 @@
             </div>
     </div>
 	<!-- End Product Area -->
-	
-	<!-- Start Midium Banner  -->
-	<section class="midium-banner">
-		<div class="container">
-			<div class="row">
-				<!-- Single Banner  -->
-				<div class="col-lg-6 col-md-6 col-12">
-					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
-						<div class="content">
-							<p>Man's Collectons</p>
-							<h3>Man's items <br>Up to<span> 50%</span></h3>
-							<a href="#">Shop Now</a>
-						</div>
-					</div>
-				</div>
-				<!-- /End Single Banner  -->
-				<!-- Single Banner  -->
-				<div class="col-lg-6 col-md-6 col-12">
-					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
-						<div class="content">
-							<p>shoes women</p>
-							<h3>mid season <br> up to <span>70%</span></h3>
-							<a href="#" class="btn">Shop Now</a>
-						</div>
-					</div>
-				</div>
-				<!-- /End Single Banner  -->
-			</div>
-		</div>
-	</section>
-	<!-- End Midium Banner -->
-	
-	<!-- Start Most Popular -->
-	<div class="product-area most-popular section">
-        <div class="container">
-            <div class="row">
-				<div class="col-12">
-					<div class="section-title">
-						<h2>Hot Item</h2>
-					</div>
-				</div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="owl-carousel popular-slider">
-						<!-- Start Single Product -->
-						<div class="single-product">
-							<div class="product-img">
-								<a href="product-details.html">
-									<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-									<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-									<span class="out-of-stock">Hot</span>
-								</a>
-								<div class="button-head">
-									<div class="product-action">
-										  
-										<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-										   
-									</div>
-									<div class="product-action-2">
-										<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-									</div>
-								</div>
-							</div>
-							<div class="product-content">
-								<h3><a href="product-details.html">Black Sunglass For Women</a></h3>
-								<div class="product-price">
-									<span class="old">$60.00</span>
-									<span>$50.00</span>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Product -->
-						<!-- Start Single Product -->
-						<div class="single-product">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-                                    <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-                                </a>
-								<div class="button-head">
-									<div class="product-action">
-										  
-										<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-										   
-									</div>
-									<div class="product-action-2">
-										<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-									</div>
-								</div>
-                            </div>
-                            <div class="product-content">
-                                <h3><a href="product-details.html">Women Hot Collection</a></h3>
-                                <div class="product-price">
-                                    <span>$50.00</span>
-                                </div>
-                            </div>
-                        </div>
-						<!-- End Single Product -->
-						<!-- Start Single Product -->
-						<div class="single-product">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-                                    <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-									<span class="new">New</span>
-                                </a>
-								<div class="button-head">
-									<div class="product-action">
-										  
-										<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-										   
-									</div>
-									<div class="product-action-2">
-										<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-									</div>
-								</div>
-                            </div>
-                            <div class="product-content">
-                                <h3><a href="product-details.html">Awesome Pink Show</a></h3>
-                                <div class="product-price">
-                                    <span>$50.00</span>
-                                </div>
-                            </div>
-                        </div>
-						<!-- End Single Product -->
-						<!-- Start Single Product -->
-						<div class="single-product">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-                                    <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-                                </a>
-								<div class="button-head">
-									<div class="product-action">
-										  
-										<a title="Wishlist" href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>Add to Wishlist</span></a>
-										   
-									</div>
-									<div class="product-action-2">
-										<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
-									</div>
-								</div>
-                            </div>
-                            <div class="product-content">
-                                <h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-                                <div class="product-price">
-                                    <span>$50.00</span>
-                                </div>
-                            </div>
-                        </div>
-						<!-- End Single Product -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-	<!-- End Most Popular Area -->
-	
-	<!-- Start Shop Home List  -->
-	<section class="shop-home-list section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="row">
-						<div class="col-12">
-							<div class="shop-section-title">
-								<h1>On sale</h1>
-							</div>
-						</div>
-					</div>
-					<!-- Start Single List  -->
-					<div class="single-list">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="list-image overlay">
-									<img src="https://via.placeholder.com/115x140" alt="#">
-									<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12 no-padding">
-								<div class="content">
-									<h4 class="title"><a href="#">Licity jelly leg flat Sandals</a></h4>
-									<p class="price with-discount">$59</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Single List  -->
-					<!-- Start Single List  -->
-					<div class="single-list">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="list-image overlay">
-									<img src="https://via.placeholder.com/115x140" alt="#">
-									<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12 no-padding">
-								<div class="content">
-									<h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-									<p class="price with-discount">$44</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Single List  -->
-					<!-- Start Single List  -->
-					<div class="single-list">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="list-image overlay">
-									<img src="https://via.placeholder.com/115x140" alt="#">
-									<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12 no-padding">
-								<div class="content">
-									<h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-									<p class="price with-discount">$89</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Single List  -->
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="row">
-						<div class="col-12">
-							<div class="shop-section-title">
-								<h1>Best Seller</h1>
-							</div>
-						</div>
-					</div>
-					<!-- Start Single List  -->
-					<div class="single-list">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="list-image overlay">
-									<img src="https://via.placeholder.com/115x140" alt="#">
-									<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12 no-padding">
-								<div class="content">
-									<h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-									<p class="price with-discount">$65</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Single List  -->
-					<!-- Start Single List  -->
-					<div class="single-list">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="list-image overlay">
-									<img src="https://via.placeholder.com/115x140" alt="#">
-									<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12 no-padding">
-								<div class="content">
-									<h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-									<p class="price with-discount">$33</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Single List  -->
-					<!-- Start Single List  -->
-					<div class="single-list">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="list-image overlay">
-									<img src="https://via.placeholder.com/115x140" alt="#">
-									<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12 no-padding">
-								<div class="content">
-									<h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-									<p class="price with-discount">$77</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Single List  -->
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="row">
-						<div class="col-12">
-							<div class="shop-section-title">
-								<h1>Top viewed</h1>
-							</div>
-						</div>
-					</div>
-					<!-- Start Single List  -->
-					<div class="single-list">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="list-image overlay">
-									<img src="https://via.placeholder.com/115x140" alt="#">
-									<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12 no-padding">
-								<div class="content">
-									<h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-									<p class="price with-discount">$22</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Single List  -->
-					<!-- Start Single List  -->
-					<div class="single-list">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="list-image overlay">
-									<img src="https://via.placeholder.com/115x140" alt="#">
-									<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12 no-padding">
-								<div class="content">
-									<h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-									<p class="price with-discount">$35</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Single List  -->
-					<!-- Start Single List  -->
-					<div class="single-list">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-12">
-								<div class="list-image overlay">
-									<img src="https://via.placeholder.com/115x140" alt="#">
-									<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-12 no-padding">
-								<div class="content">
-									<h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-									<p class="price with-discount">$99</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Single List  -->
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Shop Home List  -->
-	
-	<!-- Start Cowndown Area -->
-	<section class="cown-down">
-		<div class="section-inner ">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-lg-6 col-12 padding-right">
-						<div class="image">
-							<img src="https://via.placeholder.com/750x590" alt="#">
-						</div>	
-					</div>	
-					<div class="col-lg-6 col-12 padding-left">
-						<div class="content">
-							<div class="heading-block">
-								<p class="small-title">Deal of day</p>
-								<h3 class="title">Beatutyful dress for women</h3>
-								<p class="text">Suspendisse massa leo, vestibulum cursus nulla sit amet, frungilla placerat lorem. Cars fermentum, sapien. </p>
-								<h1 class="price">$1200 <s>$1890</s></h1>
-								<div class="coming-time">
-									<div class="clearfix" data-countdown="2021/02/30"></div>
-								</div>
-							</div>
-						</div>	
-					</div>	
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- /End Cowndown Area -->
-	
-	<!-- Start Shop Blog  -->
-	<section class="shop-blog section">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="section-title">
-						<h2>From Our Blog</h2>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July , 2020. Monday</p>
-							<a href="#" class="title">Sed adipiscing ornare.</a>
-							<a href="#" class="more-btn">Continue Reading</a>
-						</div>
-					</div>
-					<!-- End Single Blog  -->
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July, 2020. Monday</p>
-							<a href="#" class="title">Man’s Fashion Winter Sale</a>
-							<a href="#" class="more-btn">Continue Reading</a>
-						</div>
-					</div>
-					<!-- End Single Blog  -->
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July, 2020. Monday</p>
-							<a href="#" class="title">Women Fashion Festive</a>
-							<a href="#" class="more-btn">Continue Reading</a>
-						</div>
-					</div>
-					<!-- End Single Blog  -->
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Shop Blog  -->
-	
+
 	<!-- Start Shop Services Area -->
 	<section class="shop-services section home">
 		<div class="container">
@@ -2308,10 +601,11 @@
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="index.volt"><img src="img/Logoimba.png" alt="#" width="100px"></a>
+								<a href="index.volt"><img src="/img/Logoimba.png" alt="#" width="100px"></a>
 							</div>
-							<p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-							<p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
+							<p class="text">Imbashoe adalah perusahaan sepatu yang telah berdiri sejak April 2020. Memang baru, namun Imbashoe telah menjual lebih dari 200.000 produk selama 1 bulan pertama didirikan</p>
+							<p class="call">Anda ingin bertanya mengenai produk Kami? Hubungi <span><a href="https://api.whatsapp.com/send?phone=6282234361869&text=Halo+Admin+Imbashoe%2C+saya+mau+bertanya+mengenai+produk+...">082234361869</a></span></p>
+							<a type="button" class="btn btn-primary" value="kirimPesan" href="https://api.whatsapp.com/send?phone=6282234361869&text=Halo+Admin+Imbashoe%2C+saya+mau+bertanya+mengenai+produk+...">Kirim Pesan</a>
 						</div>
 						<!-- End Single Widget -->
 					</div>

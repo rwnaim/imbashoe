@@ -10,14 +10,14 @@ defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 return new \Phalcon\Config([
     'database' => [
         'adapter'     => 'Mysql',
-        'host'        => 'localhost',
+        'host'        => '127.0.0.1',
         'username'    => 'root',
         'password'    => '',
-        'dbname'      => 'test',
+        'dbname'      => 'imbashoe',
         'charset'     => 'utf8',
     ],
     'application' => [
-        'appDir'         => APP_PATH . '/',
+        'appDir'         => APP_PATH .'/',
         'controllersDir' => APP_PATH . '/controllers/',
         'modelsDir'      => APP_PATH . '/models/',
         'migrationsDir'  => APP_PATH . '/migrations/',
@@ -27,5 +27,12 @@ return new \Phalcon\Config([
         'cacheDir'       => BASE_PATH . '/cache/',
         'validationDir' => APP_PATH . '/validation/',
         'baseUri'        => getenv('BASE_URI') ? : '/',
-    ]
+        // 'logInDb' => true,
+        // 'migrationsDir' => 'db/migrations',
+        // 'migrationsTsBased' => true, // true - Use TIMESTAMP as version name, false - use versions
+        // 'exportDataFromTables' => [
+        //     'imbashoe'
+        //     // Attention! It will export data every new migration
+        // ],
+    ],
 ]);

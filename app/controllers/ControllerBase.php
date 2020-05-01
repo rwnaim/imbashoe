@@ -10,7 +10,7 @@ class ControllerBase extends Controller
     // Implement common logic
     public function onConstruct()
     {
-        // $this->ses = $this->session->has('auth');
+        $this->ses = $this->session->has('auth');
 
         $this->assets->addCss("css/bootstrap.css"); 
         // $this->assets->addCss("css/all.css"); 

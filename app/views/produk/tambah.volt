@@ -153,7 +153,7 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
-                        <h3 class="card-title text-center"><a href=""><img src="/public/img/logo.png"
+                        <h3 class="card-title text-center"><a href=""><img src="/img/Logoimba.png"
                                     style="max-height: 300px; max-width: 300px;"></a>
                         </h3>
                         <div class="alert alert-<?php echo $success === true ? 'success' : 'danger'; ?>">

@@ -13,11 +13,14 @@ $router->add('/', [
 ]);
 
 
-// $router->add('/signup', [
-//     'namespace'=>'App\Controllers',
-//     'controller'=> 'signup',
-//     'action'=>'signup'
-// ]);
+// $router->add(
+//     "/signup/edit/:params",
+//     array(
+//         "controller" => "signup",
+//         "action" => "edit",
+//         "id_user" => 1, 
+//     )
+//     );
 
 $router->add('/:controller', [
     'namespace' => 'App\Controllers',

@@ -152,46 +152,46 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
-                        <h3 class="card-title text-center"><a href=""><img src="/public/img/logo.png"
+                        <h3 class="card-title text-center"><a href=""><img src="/img/Logoimba.png"
                                     style="max-height: 300px; max-width: 300px;"></a><br>Edit Produk</h3>
-                        <form method="POST" autocomplete="off" action="{{url('Produk/update/' ~ produk.id_produk)}}" enctype="multipart/form-data">
+                        <form method="POST" autocomplete="off" action="{{url('produk/update/' ~ produk.id_produk)}}" enctype="multipart/form-data">
                             <div class="form-label-group">
                                 <input type="text" name='nama_produk' id="nama_produk" class="form-control"
-                                    placeholder="Nama Produk" required autofocus>
+                                    placeholder="Nama Produk" value="{{produk.nama_produk}}" required autofocus>
                                 <label for="nama_produk">Nama Produk</label>
                             </div>
 
                             <div class="form-label-group">
                                 <input type="text" name='brand_produk' id="brand_produk" class="form-control"
-                                    placeholder="Brand Produk" required autofocus>
+                                    placeholder="Brand Produk" value="{{produk.brand_produk}}" required autofocus>
                                 <label for="brand_produk">Brand Produk</label>
                             </div>
 
                             <div class="form-label-group">
                                 <input name="deskripsi_produk" id="deskripsi_produk" class="form-control" rows="2"
-                                    placeholder="Deskripsi Produk" required autofocus>
+                                    placeholder="Deskripsi Produk" value="{{produk.deskripsi_produk}}" required autofocus>
                                 <label for="deskripsi_produk">Deskripsi Produk</label>
                             </div>
 
                             <div class="form-label-group">
                                 <input type="text" name='harga_produk' id="harga_produk" class="form-control"
-                                    placeholder="Harga Produk" required autofocus>
+                                    placeholder="Harga Produk" value="{{produk.harga_produk}}" required autofocus>
                                 <label for="harga_produk">Harga Produk</label>
                             </div>
 
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Foto Produk</span>
+                                    <span class="input-group-text" >Foto Produk</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="foto_produk" name='foto_produk'>
-                                    <label class="custom-file-label" for="foto_produk">Pilih File</label>
+                                    <input type="file" class="custom-file-input" id="foto_produk" name='foto_produk' value="{{produk.foto_produk}}">
+                                    <label class="custom-file-label" for="foto_produk"> <? echo "{{produk.foto_produk}}" ?></label>
                                 </div>
                             </div>
 
                             <div class="form-label-group">
                                 <input type="text" name='status_produk' id="status_produk" class="form-control"
-                                    placeholder="Status Produk" required autofocus>
+                                    placeholder="Status Produk" value="{{produk.status_produk}}" required autofocus>
                                 <label for="status_produk">Status Produk (0:Kosong, 1:Tersedia)</label>
                             </div>
 

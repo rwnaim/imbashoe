@@ -80,11 +80,10 @@ $di->setShared('db', function () {
         'username' => $config->database->username,
         'password' => $config->database->password,
         'dbname'   => $config->database->dbname,
-        'port'   => $config->database->port,
         'charset'  => $config->database->charset
     ];
 
-    if ($config->database->adapter == 'Postgresql' || $config->database->adapter == 'Sqlite') {
+    if ($config->database->adapter == 'Mysql') {
         unset($params['charset']);
     }
 

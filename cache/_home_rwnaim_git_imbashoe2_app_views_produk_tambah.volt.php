@@ -1,15 +1,15 @@
 <html>
-
-<head>
-    <style>
+    
+    <head>
+        <style>
         :root {
             --input-padding-x: 1.5rem;
             --input-padding-y: .75rem;
         }
 
         body {
-            background: #01a2ff;
-            background: linear-gradient(to right, rgb(42, 195, 241), rgb(51, 116, 255));
+            background: #007bff;
+            background: linear-gradient(to right, #0062E6, #33AEFF);
         }
 
         .card-signin {
@@ -153,10 +153,19 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
-                        <h3 class="card-title text-center"><a href=""><img src="/public/img/logo.png"
-                                    style="max-height: 300px; max-width: 300px;"></a><br>Menu | &nbsp;<?php echo $this->tag->linkTo(["Session/logout", "Logout", 'class' => 'btn btn-primary']); ?></h3>
-                            <a href="{{url('/signUp/list')}}" class="btn btn-lg btn-outline-primary btn-block" role="button">All Users</a>
-                            <a href="{{url('/Produk/list')}}" class="btn btn-lg btn-outline-primary btn-block" role="button">List Produk</a>
+                        <h3 class="card-title text-center"><a href=""><img src="/img/Logoimba.png"
+                                    style="max-height: 300px; max-width: 300px;"></a>
+                        </h3>
+                        <div class="alert alert-<?php echo $success === true ? 'success' : 'danger'; ?>">
+                            <?php echo $message; ?>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <a href="<?= $this->url->get('/Produk/list') ?>" class="btn btn-lg btn-outline-primary" role="button">List Produk</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

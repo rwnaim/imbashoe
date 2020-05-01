@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ static_url('css/material-design-iconic-font.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ static_url('css/signup.css') }}" type="text/css">
     <!-- <link rel="stylesheet" href="{{ static_url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css') }}" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 
 </head>
@@ -22,19 +23,27 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Sign up</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <h2 class="form-title">Register</h2>
+                        <form method="POST" class="register-form" id="register-form" autocomplete="off" action="{{url('signup/register')}}">
                             <div class="form-group">
                                 <label for="username"><img src="SVG/at.svg" width="15px"></label>
-                                <input type="text" name="username" id="name" placeholder="username"/>
+                                <input type="text" name="username" id="username" placeholder="username"/>
                             </div>
                             <div class="form-group">
                                 <label for="name"><img src="SVG/user.svg" width="15px"></label>
-                                <input type="text" name="name" id="name" placeholder="Name"/>
+                                <input type="text" name="nama" id="nama" placeholder="Nama Lengkap"/>
                             </div>
                             <div class="form-group">
                                 <label for="email"><img src="SVG/email.svg" width="15px"></label>
                                 <input type="email" name="email" id="email" placeholder="Email"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="no_hp"><i class="fa fa-phone" aria-hidden="true"></i></label>
+                                <input type="no_hp" name="no_hp" id="no_hp" placeholder="Nomor Handphone"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="alamat"><i class="fa fa-map-marker" aria-hidden="true"></i></label>
+                                <input type="alamat" name="alamat" id="alamat" placeholder="Alamat Lengkap"/>
                             </div>
                             <div class="form-group">
                                 <label for="pass"><img src="SVG/lock.svg" width="15px"></label>
@@ -48,7 +57,7 @@
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-block" value="Register">Submit</button>
                                 <!-- <p class="punyaakun">Saya sudah memiliki akun. <a href="#" class="signup-image-link" id="punyaakun">Login disini</a></p> -->
-                                <p class="punyaakun">Saya sudah memiliki akun. <a href="#"> Login disini</a></p>
+                                <p class="punyaakun">Saya sudah memiliki akun. <a href="/"> Login disini</a></p>
                             </div>
                             
                         </form>

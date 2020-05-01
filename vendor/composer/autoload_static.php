@@ -18,6 +18,8 @@ class ComposerStaticInit622780020c34f882a5ed1e3d72604102
         'P' => 
         array (
             'PhpOption\\' => 10,
+            'Phalcon\\Migrations\\' => 19,
+            'Phalcon\\Cop\\' => 12,
         ),
         'D' => 
         array (
@@ -33,6 +35,14 @@ class ComposerStaticInit622780020c34f882a5ed1e3d72604102
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'Phalcon\\Migrations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phalcon/migrations/src',
+        ),
+        'Phalcon\\Cop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phalcon/cli-options-parser/src',
         ),
         'Dotenv\\' => 
         array (
