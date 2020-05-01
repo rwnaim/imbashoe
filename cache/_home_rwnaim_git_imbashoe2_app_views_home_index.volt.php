@@ -315,7 +315,7 @@
 															<!--  <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>   -->
 														</div>
 														<div class="product-action-2">
-															<a title="Lihat Selengkapnya" href="<?= $this->url->get('produk/detail') ?>">Lihat Selengkapnya</a>
+															<a title="Lihat Selengkapnya" href="<?= $this->url->get('produk/detail/1') ?>">Lihat Selengkapnya</a>
 														</div>
 													</div>
 												</div>

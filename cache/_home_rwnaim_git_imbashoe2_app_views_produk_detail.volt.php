@@ -320,8 +320,7 @@
 					<p class="product-description mt-20">
 					Deskripsi Produk :	<br><?= $this->url->get($prod->deskripsi_produk) ?>
 					</p>
-					<h5>Brand <?= $prod->brand_produk ?></h5>
-					<br>
+					
 					
 					<div class="color-swatches">
 						<span>color:</span>
@@ -359,7 +358,9 @@
 						</ul>
 					</div>
 					<br>
-					<h5>Stock tersedia</h5>
+					<h6>Stock tersedia</h6>
+					<br>
+					<h5>Brand <?= $prod->brand_produk ?></h5>
 					<br>
 				</div>
 			</div>

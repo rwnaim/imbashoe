@@ -398,7 +398,7 @@
 				<div class="col-lg-3 col-md-6 col-12">
 					<!-- Start Single Service -->
 					<div class="single-service">
-						<i class="ti-rocket"></i>
+						<i class="fa fa-rocket" aria-hidden="true"></i>
 						<h4>Free shiping</h4>
 						<p>Orders over $100</p>
 					</div>
@@ -407,7 +407,7 @@
 				<div class="col-lg-3 col-md-6 col-12">
 					<!-- Start Single Service -->
 					<div class="single-service">
-						<i class="ti-reload"></i>
+						<i class="fa fa-refresh" aria-hidden="true"></i>
 						<h4>Free Return</h4>
 						<p>Within 30 days returns</p>
 					</div>
@@ -416,7 +416,7 @@
 				<div class="col-lg-3 col-md-6 col-12">
 					<!-- Start Single Service -->
 					<div class="single-service">
-						<i class="ti-lock"></i>
+						<i class="fa fa-lock" aria-hidden="true"></i>
 						<h4>Sucure Payment</h4>
 						<p>100% secure payment</p>
 					</div>
@@ -425,7 +425,7 @@
 				<div class="col-lg-3 col-md-6 col-12">
 					<!-- Start Single Service -->
 					<div class="single-service">
-						<i class="ti-tag"></i>
+						<i class="fa fa-tag" aria-hidden="true"></i>
 						<h4>Best Peice</h4>
 						<p>Guaranteed price</p>
 					</div>
