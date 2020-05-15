@@ -288,7 +288,7 @@
 																<!--  <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>   -->
 															</div>
 															<div class="product-action-2">
-																<a title="Tambahkan ke Wishlist" href="#">Lihat Selengkapnya</a>
+																<a title="Tambahkan ke Wishlist" href="<?= $this->url->get('/produk/detail/' . $prod->id_produk) ?>">Lihat Selengkapnya</a>
 															</div>
 														</div>
 													</div>

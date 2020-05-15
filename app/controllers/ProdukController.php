@@ -15,11 +15,13 @@ class ProdukController extends ControllerBase
     {
 
     }
-    public function detailAction()
+    public function detailAction($id_produk)
     {
-        $produk = new Produk();
-        $id_produk = 1;
-        $this->view->produk = Produk::find($id_produk);
+    //     $produk = new Produk();
+    //     // $id_produk = 1;
+    //     $this->view->produk = Produk::find($id_produk);
+        $produk = Produk::findFirstByid_produk($id_produk);
+        $this->view->produk = $produk;
     }
     public function cariAction()
     {

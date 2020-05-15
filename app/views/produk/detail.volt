@@ -245,7 +245,7 @@
 <section class="single-product">
 	<div class="container">
 		
-		{% for prod in produk %}
+		
 		<div class="row mt-20">
 			<div class="col-md-5">
 				<div class="single-product-slider">
@@ -254,7 +254,7 @@
 							<!-- me art lab slider -->
 							<div class='carousel-inner '>
 								<div class='item active'>
-									<img src='{{url(prod.foto_produk)}}' alt='' data-zoom-image="{{url(prod.foto_produk) ~ prod.id_produk}}" />
+									<img src='{{url(produk.foto_produk)}}' alt='' data-zoom-image="{{url(produk.foto_produk)}}" />
 								</div>
 								<div class='item'>
 									<img src='images/shop/single-products/product-2.jpg' alt='' data-zoom-image="images/shop/single-products/product-2.jpg" />
@@ -287,7 +287,7 @@
 						<!-- thumb -->
 						<ol class='carousel-indicators mCustomScrollbar meartlab'>
 							<li data-target='#carousel-custom' data-slide-to='0' class='active'>
-								<img src='{{url(prod.foto_produk)}}' alt='' />
+								<img src='{{url(produk.foto_produk)}}' alt='' />
 							</li>
 							<li data-target='#carousel-custom' data-slide-to='1'>
 								<img src='images/shop/single-products/product-2.jpg' alt='' />
@@ -314,15 +314,17 @@
 			
 			<div class="col-md-7">
 				<div class="single-product-details">
-					<h2>{{url(prod.nama_produk)}}</h2>
-					<p class="product-price">Rp {{ prod.harga_produk }}</p>
+					<h2>{{ produk.nama_produk }}</h2>
+					<p class="product-price">Rp {{ produk.harga_produk }}</p>
 					
 					<p class="product-description mt-20">
-					Deskripsi Produk :	<br>{{url(prod.deskripsi_produk)}}
+					Deskripsi Produk :	<br>{{ produk.deskripsi_produk }}
 					</p>
+					<br>
+					<h5>Brand : {{ produk.brand_produk }}</h5>
+					<br>
 					
-					
-					<div class="color-swatches">
+					<!-- <div class="color-swatches">
 						<span>color:</span>
 						<ul>
 							<li>
@@ -335,38 +337,38 @@
 								<a href="" class="swatch-cream"></a>
 							</li>
 						</ul>
-					</div>
+					</div> -->
 					<div class="product-size">
-						<span>Size:</span>
+						<span>Size tersedia:</span>
 						<select class="form-control">
-							<option>40</option>
 							<option>43</option>
 							<option>41</option>
 							<option>40</option>
+							<option>38</option>
 						</select>
 					</div>
-					<div class="product-quantity">
+					<!-- <div class="product-quantity">
 						<span>Quantity:</span>
 						<div class="product-quantity-slider">
 							<input id="product-quantity" type="text" value="0" name="product-quantity">
 						</div>
-					</div>
+					</div> -->
 					<div class="product-category">
 						<span>Categories:</span>
 						<ul>
-							<li>{{ prod.kategori }}</a></li>
+							<li>{{ produk.kategori }}</a></li>
 						</ul>
 					</div>
 					<br>
 					<h6>Stock tersedia</h6>
 					<br>
-					<h5>Brand {{ prod.brand_produk }}</h5>
 					<br>
+					<button class=" btn btn-lg btn-primary">Tambahkan ke Wishlist</button>
 				</div>
 			</div>
 			
 		</div>
-		{% endfor %}
+		
 		
 	</div>
 </section>
