@@ -295,16 +295,16 @@
 						</div>
 						<div class="tab-content" id="myTabContent">
 							<!-- Start Single Tab -->
-							
-							<div class="tab-pane fade show active" id="man" role="tabpanel">
 								
+							<div class="tab-pane fade show active" id="man" role="tabpanel">
+									
 								<div class="tab-single">
 									<div class="row">
 										<?php foreach ($produk as $prod) { ?>
 										<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 											<div class="single-product">
 												<div class="product-img">
-													<a href="product-details.html">
+													<a href="<?= $this->url->get('/produk/detail/' . $prod->id_produk) ?>">
 														<img class="default-img" src="<?= $this->url->get($prod->foto_produk) ?>" alt="#">
 														<!-- <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#"> -->
 													</a>
@@ -315,7 +315,7 @@
 															<!--  <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>   -->
 														</div>
 														<div class="product-action-2">
-															<a title="Lihat Selengkapnya" href="<?= $this->url->get('produk/detail/ ~ pod.id_produk') ?>">Lihat Selengkapnya</a>
+															<a title="Tambahkan ke Wishlist" href="<?= $this->url->get('/produk/detail/' . $prod->id_produk) ?>">Lihat Selengkapnya</a>
 														</div>
 													</div>
 												</div>
@@ -343,7 +343,7 @@
 										<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 											<div class="single-product">
 												<div class="product-img">
-													<a href="product-details.html">
+													<a href="<?= $this->url->get('/produk/detail/' . $prod->id_produk) ?>">
 														<img class="default-img" src="<?= $this->url->get($prod->foto_produk) ?>" alt="#">
 														<!-- <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#"> -->
 													</a>
@@ -354,7 +354,7 @@
 															<!--  <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>   -->
 														</div>
 														<div class="product-action-2">
-															<a title="Lihat Selengkapnya" href="<?= $this->url->get('produk/detail/1') ?>">Lihat Selengkapnya</a>
+															<a title="Tambahkan ke Wishlist" href="<?= $this->url->get('/produk/detail/' . $prod->id_produk) ?>">Lihat Selengkapnya</a>
 														</div>
 													</div>
 												</div>
@@ -381,7 +381,7 @@
 										<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 											<div class="single-product">
 												<div class="product-img">
-													<a href="product-details.html">
+													<a href="<?= $this->url->get('/produk/detail/' . $prod->id_produk) ?>">
 														<img class="default-img" src="<?= $this->url->get($prod->foto_produk) ?>" alt="#">
 														<!-- <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#"> -->
 													</a>
@@ -392,7 +392,7 @@
 															<!--  <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>   -->
 														</div>
 														<div class="product-action-2">
-															<a title="Lihat Selengkapnya" href="<?= $this->url->get('produk/detail/1') ?>">Lihat Selengkapnya</a>
+															<a title="Tambahkan ke Wishlist" href="<?= $this->url->get('/produk/detail/' . $prod->id_produk) ?>">Lihat Selengkapnya</a>
 														</div>
 													</div>
 												</div>
